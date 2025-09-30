@@ -1,0 +1,43 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" fill="url(#bg)"/>
+
+  <!-- Wallet/Money symbol -->
+  <g transform="translate(128, 128)">
+    <!-- Wallet outline -->
+    <rect x="0" y="60" width="256" height="160" rx="20" fill="none" stroke="white" stroke-width="12"/>
+
+    <!-- Wallet fold -->
+    <path d="M0 80 L256 80 L256 100 L20 100 Z" fill="white" opacity="0.3"/>
+
+    <!-- Dollar sign -->
+    <g transform="translate(100, 90)">
+      <!-- S shape -->
+      <path d="M28 20 Q50 20 50 40 Q50 50 28 50 Q6 50 6 60 Q6 80 28 80 Q50 80 50 100 Q50 120 28 120"
+            fill="none" stroke="white" stroke-width="8" stroke-linecap="round"/>
+      <!-- Vertical line -->
+      <line x1="28" y1="0" x2="28" y2="140" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <!-- Card slots -->
+    <rect x="180" y="80" width="60" height="8" rx="4" fill="white" opacity="0.6"/>
+    <rect x="180" y="100" width="60" height="8" rx="4" fill="white" opacity="0.6"/>
+    <rect x="180" y="120" width="60" height="8" rx="4" fill="white" opacity="0.6"/>
+  </g>
+
+  <!-- Coins -->
+  <circle cx="380" cy="200" r="30" fill="white" opacity="0.9"/>
+  <circle cx="380" cy="200" r="20" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <text x="380" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#3b82f6">$</text>
+
+  <circle cx="350" cy="240" r="25" fill="white" opacity="0.8"/>
+  <circle cx="350" cy="240" r="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+  <text x="350" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#3b82f6">¢</text>
+</svg>
