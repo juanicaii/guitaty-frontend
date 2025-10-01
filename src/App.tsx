@@ -20,6 +20,7 @@ function App() {
 
   // Set up the token getter for API calls
   useEffect(() => {
+    console.log("ISSIGNEDID", isSignedIn)
     if (isSignedIn) {
       setAuthTokenGetter(getToken);
     }
@@ -55,6 +56,7 @@ function App() {
     );
   }
 
+ 
   // Show sign in if not authenticated
   if (!isSignedIn) {
     return (
@@ -74,9 +76,9 @@ function App() {
             </p>
           </div>
           <SignIn
-            routing="path"
-            path="/sign-in"
-            signUpUrl="/sign-up"
+            // routing="path"
+            // path="/sign-in"
+            // signUpUrl="/sign-up"
           />
         </motion.div>
       </div>
