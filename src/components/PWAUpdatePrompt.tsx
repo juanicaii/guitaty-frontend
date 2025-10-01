@@ -3,7 +3,7 @@ import { useServiceWorker } from '@/hooks/useServiceWorker';
 
 export const PWAUpdatePrompt = () => {
   const [showPrompt, setShowPrompt] = useState(false);
-  const [offlineReady, setOfflineReady] = useState(false);
+  const [_offlineReady, setOfflineReady] = useState(false);
   
   const { 
     isSupported, 
