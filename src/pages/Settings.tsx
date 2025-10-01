@@ -9,15 +9,27 @@ import {
 } from 'konsta/react';
 import { useUser, useClerk } from '@clerk/clerk-react';
 import { useAppStore } from '@/stores/appStore';
+import { useCacheManager } from '@/hooks/useCacheManager';
 import { Currency } from '@/types';
 
 export const Settings = () => {
   const { user } = useUser();
   const { signOut } = useClerk();
   const { isDarkMode, toggleDarkMode, defaultCurrency, setDefaultCurrency } = useAppStore();
+  const { clearCache, reloadApp } = useCacheManager();
 
   const handleSignOut = () => {
     signOut();
+  };
+
+  const handleClearCache = async () => {
+    const success = await clearCache();
+    if (success) {
+      alert('Caché limpiado exitosamente. La aplicación se recargará.');
+      reloadApp();
+    } else {
+      alert('Error al limpiar el caché.');
+    }
   };
 
   return (
@@ -57,6 +69,16 @@ export const Settings = () => {
           <option value={Currency.USD}>USD ($)</option>
           <option value={Currency.ARS}>ARS ($)</option>
         </ListInput>
+      </List>
+
+      <BlockTitle>Cache y Datos</BlockTitle>
+      <List strongIos outlineIos>
+        <ListItem
+          title="Limpiar Caché"
+          subtitle="Elimina datos almacenados localmente"
+          onClick={handleClearCache}
+          link
+        />
       </List>
 
       <BlockTitle>Acerca de</BlockTitle>

@@ -10,7 +10,6 @@ import { Dashboard } from '@/pages/Dashboard';
 import { Transactions } from '@/pages/Transactions';
 import { Accounts } from '@/pages/Accounts';
 import { Categories } from '@/pages/Categories';
-import { Investments } from '@/pages/Investments';
 import { Settings } from '@/pages/Settings';
 import { useAppStore } from '@/stores/appStore';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -31,7 +30,6 @@ function App() {
     transactions: <Transactions />,
     accounts: <Accounts />,
     categories: <Categories />,
-    investments: <Investments />,
     settings: <Settings />,
   };
 
@@ -101,7 +99,6 @@ function App() {
               {currentTab === 'transactions' && 'Transacciones'}
               {currentTab === 'accounts' && 'Mis Cuentas'}
               {currentTab === 'categories' && 'Categorías'}
-              {currentTab === 'investments' && 'Inversiones'}
               {currentTab === 'settings' && 'Configuración'}
             </motion.h1>
           </div>
@@ -132,6 +129,9 @@ function App() {
 
         {/* PWA Install Button */}
         <PWAInstallButton />
+
+        {/* PWA Update Prompt */}
+        <PWAUpdatePrompt />
       </div>
     </QueryClientProvider>
   );

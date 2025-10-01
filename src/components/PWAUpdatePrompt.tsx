@@ -1,21 +1,28 @@
 import { useState, useEffect } from 'react';
-import { useRegisterSW } from 'virtual:pwa-register/react';
 
 export const PWAUpdatePrompt = () => {
   const [showPrompt, setShowPrompt] = useState(false);
+  const [needRefresh, setNeedRefresh] = useState(false);
+  const [offlineReady, setOfflineReady] = useState(false);
 
-  const {
-    offlineReady: [offlineReady, setOfflineReady],
-    needRefresh: [needRefresh, setNeedRefresh],
-    updateServiceWorker,
-  } = useRegisterSW({
-    onRegistered(r) {
-      console.log('SW Registered: ' + r);
-    },
-    onRegisterError(error) {
-      console.log('SW registration error', error);
-    },
-  });
+  // Detectar si hay un service worker registrado
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(registration => {
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          if (newWorker) {
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                setNeedRefresh(true);
+                setShowPrompt(true);
+              }
+            });
+          }
+        });
+      });
+    }
+  }, []);
 
   useEffect(() => {
     setShowPrompt(needRefresh || offlineReady);
@@ -28,8 +35,8 @@ export const PWAUpdatePrompt = () => {
   };
 
   const handleUpdate = async () => {
-    if (needRefresh) {
-      await updateServiceWorker(true);
+    if (needRefresh && 'serviceWorker' in navigator) {
+      window.location.reload();
     }
     close();
   };

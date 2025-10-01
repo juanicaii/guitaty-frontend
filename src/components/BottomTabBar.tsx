@@ -4,14 +4,14 @@ import {
   CreditCardIcon,
   BanknotesIcon,
   TagIcon,
-  ChartBarIcon,
+  CogIcon,
 } from '@heroicons/react/24/outline';
 import {
   HomeIcon as HomeSolid,
   CreditCardIcon as CreditCardSolid,
   BanknotesIcon as BanknotesSolid,
   TagIcon as TagSolid,
-  ChartBarIcon as ChartBarSolid,
+  CogIcon as CogSolid,
 } from '@heroicons/react/24/solid';
 
 interface BottomTabBarProps {
@@ -24,7 +24,7 @@ const tabs = [
   { id: 'transactions', label: 'Movimientos', Icon: CreditCardIcon, IconSolid: CreditCardSolid },
   { id: 'accounts', label: 'Cuentas', Icon: BanknotesIcon, IconSolid: BanknotesSolid },
   { id: 'categories', label: 'Categorías', Icon: TagIcon, IconSolid: TagSolid },
-  { id: 'investments', label: 'Inversiones', Icon: ChartBarIcon, IconSolid: ChartBarSolid },
+  { id: 'settings', label: 'Ajustes', Icon: CogIcon, IconSolid: CogSolid },
 ];
 
 export function BottomTabBar({ currentTab, onTabChange }: BottomTabBarProps) {
