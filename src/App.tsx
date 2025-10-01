@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { useAuth, SignIn } from '@clerk/clerk-react';
-import { queryClient } from '@/services/queryClient';
-import { setAuthTokenGetter } from '@/utils/api';
-import { BottomTabBar } from '@/components/BottomTabBar';
-import { PWAInstallButton } from '@/components/PWAInstallButton';
-import { PWAUpdatePrompt } from '@/components/PWAUpdatePrompt';
-import { Dashboard } from '@/pages/Dashboard';
-import { Transactions } from '@/pages/Transactions';
-import { Accounts } from '@/pages/Accounts';
-import { Categories } from '@/pages/Categories';
-import { Settings } from '@/pages/Settings';
-import { useAppStore } from '@/stores/appStore';
+import { queryClient } from './services/queryClient';
+import { setAuthTokenGetter } from './utils/api';
+import { BottomTabBar } from './components/BottomTabBar';
+import { PWAInstallButton } from './components/PWAInstallButton';
+import { PWAUpdatePrompt } from './components/PWAUpdatePrompt';
+import { Dashboard } from './pages/Dashboard';
+import { Transactions } from './pages/Transactions';
+import { Accounts } from './pages/Accounts';
+import { Categories } from './pages/Categories';
+import { Settings } from './pages/Settings';
+import { useAppStore } from './stores/appStore';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {

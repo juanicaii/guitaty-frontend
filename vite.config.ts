@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'prompt',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'offline.html'],
-      strategies: 'generateSW',
+      strategies: 'injectManifest',
+      srcDir: 'public',
+      filename: 'sw.js',
       injectRegister: 'auto',
       manifest: {
         name: 'Guitaty - Finanzas Personales',
@@ -87,57 +88,112 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // Solo cachear assets específicos, no todo
+        // Patrones de archivos para precache
         globPatterns: [
-          '**/*.{js,css,ico,png,svg,woff2}',
-          'offline.html'
+          '**/*.{js,css,ico,png,svg,woff2,woff,ttf}',
+          'offline.html',
+          'index.html'
         ],
-        // Excluir index.html del precache para evitar caché agresivo
-        globIgnores: ['**/index.html'],
+        // Excluir archivos del precache
+        globIgnores: [
+          '**/node_modules/**/*',
+          '**/sw.js',
+          '**/workbox-*.js'
+        ],
+        // Página de fallback para navegación offline
         navigateFallback: '/offline.html',
-        navigateFallbackDenylist: [/^\/_/, /\/[^/?]+\.[^/]+$/, /^\/api\//],
+        navigateFallbackDenylist: [
+          /^\/_/, 
+          /\/[^/?]+\.[^/]+$/, 
+          /^\/api\//,
+          /^\/admin\//
+        ],
+        // Configuración de runtime caching mejorada
         runtimeCaching: [
-          // Caché para la página principal con NetworkFirst
+          // Páginas principales con estrategia NetworkFirst
           {
             urlPattern: /^\/$/,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'pages-cache',
-              networkTimeoutSeconds: 3,
+              networkTimeoutSeconds: 5,
               expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 5 // 5 minutos
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 10 // 10 minutos
               },
               cacheableResponse: {
                 statuses: [0, 200]
               }
             }
           },
-          // API endpoints con NetworkFirst
+          // Rutas de la aplicación con NetworkFirst
+          {
+            urlPattern: /^\/(dashboard|transactions|accounts|categories|investments|settings)(\/.*)?$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'app-pages-cache',
+              networkTimeoutSeconds: 3,
+              expiration: {
+                maxEntries: 30,
+                maxAgeSeconds: 60 * 15 // 15 minutos
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          // API endpoints con estrategia híbrida
           {
             urlPattern: /^\/api\/.*/i,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
               expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 // 1 hora
+                maxEntries: 200,
+                maxAgeSeconds: 60 * 30 // 30 minutos
               },
               cacheableResponse: {
                 statuses: [0, 200]
               },
-              networkTimeoutSeconds: 3
+              networkTimeoutSeconds: 5
             }
           },
-          // Imágenes con CacheFirst
+          // Datos financieros con CacheFirst para mejor rendimiento
           {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/i,
+            urlPattern: /^\/api\/(transactions|accounts|categories|investments)/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'financial-data-cache',
+              expiration: {
+                maxEntries: 500,
+                maxAgeSeconds: 60 * 60 * 2 // 2 horas
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
+              }
+            }
+          },
+          // Imágenes y assets estáticos con CacheFirst
+          {
+            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|ico|avif)$/i,
             handler: 'CacheFirst',
             options: {
               cacheName: 'images-cache',
               expiration: {
-                maxEntries: 60,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 días
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 30 // 30 días
+              }
+            }
+          },
+          // Fuentes con CacheFirst
+          {
+            urlPattern: /\.(?:woff2|woff|ttf|eot)$/i,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'fonts-cache',
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 60 * 24 * 365 // 1 año
               }
             }
           },
@@ -148,12 +204,33 @@ export default defineConfig({
             options: {
               cacheName: 'static-resources-cache',
               expiration: {
+                maxEntries: 100,
+                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 días
+              }
+            }
+          },
+          // Datos de conversión de moneda con estrategia especial
+          {
+            urlPattern: /^\/api\/currency\/.*/i,
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'currency-cache',
+              expiration: {
                 maxEntries: 50,
-                maxAgeSeconds: 60 * 60 * 24 // 1 día
+                maxAgeSeconds: 60 * 60 * 6 // 6 horas
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
               }
             }
           }
-        ]
+        ],
+        // Configuración adicional de Workbox
+        cleanupOutdatedCaches: true,
+        skipWaiting: true,
+        clientsClaim: true,
+        // Configuración de notificaciones
+        disableDevLogs: false
       },
       devOptions: {
         enabled: true,
@@ -163,7 +240,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': '/src'
     }
   }
 })
