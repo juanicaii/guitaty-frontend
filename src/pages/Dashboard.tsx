@@ -6,6 +6,7 @@ import { FinancialChart } from '@/components/FinancialChart';
 import { NativeCard, NativeListItem } from '@/components/NativeCard';
 import { CurrencySelector } from '@/components/CurrencySelector';
 import { useMultiCurrencyBalance } from '@/hooks/useCurrencyConversion';
+import { useAppStore } from '@/stores/appStore';
 import { Currency } from '@/types';
 import {
   BanknotesIcon,
@@ -34,39 +35,15 @@ export const Dashboard = () => {
   const monthRange = getCurrentMonthRange();
   const { data: stats, isLoading } = useDashboardStats(monthRange);
   const { data: accounts } = useAccounts();
-  const [displayCurrency, setDisplayCurrency] = useState<Currency>(Currency.USD);
+  const defaultCurrency = useAppStore((state) => state.defaultCurrency);
+  const [displayCurrency, setDisplayCurrency] = useState<Currency>(defaultCurrency);
 
-  // Calcular balance total en la moneda seleccionada
+  // Calcular balance total en la moneda seleccionada (solo cuentas de esa moneda)
   const totalBalance = useMultiCurrencyBalance(accounts || [], displayCurrency);
 
-  // Función helper para conversión de moneda
-  const convertCurrency = (amount: number, fromCurrency: Currency, toCurrency: Currency): number => {
-    if (fromCurrency === toCurrency) return amount;
-
-    // Tasas de cambio (en producción esto vendría de una API)
-    const USD_TO_ARS = 1000;
-    const ARS_TO_USD = 0.001;
-
-    if (fromCurrency === Currency.USD && toCurrency === Currency.ARS) {
-      return amount * USD_TO_ARS;
-    } else if (fromCurrency === Currency.ARS && toCurrency === Currency.USD) {
-      return amount * ARS_TO_USD;
-    }
-    return amount;
-  };
-
-  // Convertir ingresos y gastos
-  const totalIncome = convertCurrency(
-    stats?.totalIncome || 0,
-    Currency.USD,
-    displayCurrency
-  );
-
-  const totalExpenses = convertCurrency(
-    stats?.totalExpenses || 0,
-    Currency.USD,
-    displayCurrency
-  );
+  // Mostrar ingresos y gastos sin conversión (solo de la moneda seleccionada)
+  const totalIncome = stats?.totalIncome || 0;
+  const totalExpenses = stats?.totalExpenses || 0;
 
   // Mock data para gráficos de demostración
   const monthlyData = [
@@ -131,15 +108,6 @@ export const Dashboard = () => {
               <p className="text-3xl font-bold mt-1">
                 {formatCurrency(totalBalance, displayCurrency)}
               </p>
-              {/* Mostrar equivalencia si hay cuentas en ambas monedas */}
-              {accounts && accounts.some(acc => acc.currency !== displayCurrency) && (
-                <p className="text-blue-200 text-xs mt-1">
-                  ≈ {formatCurrency(
-                    totalBalance,
-                    displayCurrency === Currency.USD ? Currency.ARS : Currency.USD
-                  )}
-                </p>
-              )}
             </div>
             <div className="p-2 bg-white/20 rounded-xl">
               <WalletIcon className="w-6 h-6" />
@@ -217,13 +185,9 @@ export const Dashboard = () => {
           </button>
         </div>
         <NativeCard noPadding className="divide-y divide-gray-100 dark:divide-gray-700">
-          {accounts?.map((account) => {
-            // Convertir el balance si es necesario usando la función helper
-            const displayBalance = account.currency === displayCurrency
-              ? account.balance
-              : convertCurrency(account.balance, account.currency, displayCurrency);
-
-            return (
+          {accounts
+            ?.filter(account => account.currency === displayCurrency)
+            .map((account) => (
               <NativeListItem
                 key={account.id}
                 title={account.name}
@@ -238,16 +202,9 @@ export const Dashboard = () => {
                   </div>
                 }
                 value={
-                  <div className="text-right">
-                    <p className="font-semibold">
-                      {formatCurrency(displayBalance, displayCurrency)}
-                    </p>
-                    {account.currency !== displayCurrency && (
-                      <p className="text-xs text-gray-500 dark:text-gray-400">
-                        {formatCurrency(account.balance, account.currency)}
-                      </p>
-                    )}
-                  </div>
+                  <p className="font-semibold">
+                    {formatCurrency(account.balance, displayCurrency)}
+                  </p>
                 }
                 icon={
                   <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-xl">
@@ -257,8 +214,7 @@ export const Dashboard = () => {
                 onClick={() => console.log('Account clicked:', account.id)}
                 showArrow
               />
-            );
-          })}
+            ))}
         </NativeCard>
       </motion.div>
 
@@ -276,10 +232,7 @@ export const Dashboard = () => {
                     {item.categoryName}
                   </span>
                   <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                    {formatCurrency(
-                      convertCurrency(item.amount, Currency.USD, displayCurrency),
-                      displayCurrency
-                    )}
+                    {formatCurrency(item.amount, displayCurrency)}
                   </span>
                 </div>
                 <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">

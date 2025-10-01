@@ -24,7 +24,7 @@ export const useAppStore = create<AppState>()(
       toggleDarkMode: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
 
       // Currency
-      defaultCurrency: Currency.USD,
+      defaultCurrency: Currency.ARS,
       setDefaultCurrency: (currency) => set({ defaultCurrency: currency }),
 
       // Navigation

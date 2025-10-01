@@ -34,11 +34,11 @@ export function BottomTabBar({ currentTab, onTabChange }: BottomTabBarProps) {
       <div className="h-20 md:h-24" />
 
       {/* Bottom Tab Bar */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 z-50">
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 z-50" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
         {/* iOS safe area background */}
         <div className="absolute inset-0 bg-white dark:bg-gray-900" />
 
-        <nav className="relative flex justify-around items-center px-2 pt-2 pb-safe">
+        <nav className="relative flex justify-around items-center pt-2 pb-2" style={{ paddingLeft: 'max(0.5rem, env(safe-area-inset-left))', paddingRight: 'max(0.5rem, env(safe-area-inset-right))' }}>
           {tabs.map((tab) => {
             const isActive = currentTab === tab.id;
             const Icon = isActive ? tab.IconSolid : tab.Icon;

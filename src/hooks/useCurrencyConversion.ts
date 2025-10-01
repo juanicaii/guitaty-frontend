@@ -31,19 +31,13 @@ export function useCurrencyConversion(
 }
 
 export function useMultiCurrencyBalance(accounts: any[], displayCurrency: Currency) {
-  const totalInUSD = accounts?.reduce((acc, account) => {
-    const amountInUSD = account.currency === Currency.USD
-      ? account.balance
-      : account.balance * EXCHANGE_RATES.ARS_TO_USD;
-    return acc + amountInUSD;
+  // Solo sumar cuentas de la moneda seleccionada, sin conversión
+  const total = accounts?.reduce((acc, account) => {
+    if (account.currency === displayCurrency) {
+      return acc + account.balance;
+    }
+    return acc;
   }, 0) || 0;
 
-  const totalInARS = accounts?.reduce((acc, account) => {
-    const amountInARS = account.currency === Currency.ARS
-      ? account.balance
-      : account.balance * EXCHANGE_RATES.USD_TO_ARS;
-    return acc + amountInARS;
-  }, 0) || 0;
-
-  return displayCurrency === Currency.USD ? totalInUSD : totalInARS;
+  return total;
 }
