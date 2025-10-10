@@ -142,7 +142,7 @@ export const exchangeRateApi = {
       )
 
       if (response.data.result === 'success' || response.data.conversion_rates?.ARS) {
-        return response.data.conversion_rates.ARS
+        return response.data.conversion_rates?.ARS || 1421.5
       }
 
       throw new Error('Failed to fetch exchange rate')

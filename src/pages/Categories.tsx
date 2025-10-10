@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useCategories, useCreateCategory, useDeleteCategory } from '@/hooks/useCategories'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -220,7 +220,7 @@ export function Categories() {
                   </Select>
                 </div>
                 <IconPicker
-                  value={formData.icon}
+                  value={formData.icon || ''}
                   onChange={(icon) => setFormData({ ...formData, icon })}
                   color={formData.color}
                 />
