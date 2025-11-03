@@ -39,9 +39,7 @@ const CategoryForm = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
   // Fetch category if editing
-  const { data: category, isLoading: isLoadingCategory } = useCategory(id || '', {
-    enabled: isEditing,
-  })
+  const { data: category, isLoading: isLoadingCategory } = useCategory(id || '', isEditing)
 
   // Mutations
   const createMutation = useCreateCategory()

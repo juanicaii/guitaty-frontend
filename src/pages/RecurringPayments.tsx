@@ -1,11 +1,10 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Plus, Repeat, Calendar, DollarSign } from 'lucide-react'
+import { ArrowLeft, Plus, Repeat, Calendar } from 'lucide-react'
 import { FAB } from '@/components/ui/FAB'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { useSubscriptions } from '@/lib/hooks'
-import { getIcon } from '@/lib/utils/iconMapper'
 import dayjs from 'dayjs'
 import 'dayjs/locale/es'
 

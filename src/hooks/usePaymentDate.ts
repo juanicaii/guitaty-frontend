@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 const PAYMENT_DATE_KEY = 'paymentDate'
 

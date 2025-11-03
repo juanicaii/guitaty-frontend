@@ -116,7 +116,6 @@ export default function SubscriptionForm() {
   }
 
   const selectedCategory = categories.find(c => c.id === categoryId)
-  const selectedAccount = accounts.find(a => a.id === accountId)
 
   if (isEditing && isLoadingSubscription) {
     return (

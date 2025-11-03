@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Tag, Repeat, Trash2 } from 'lucide-react'
+import { ArrowLeft, Tag, Trash2 } from 'lucide-react'
 import { CategoryPicker } from '@/components/forms/CategoryPicker'
 import { useBudget, useCreateBudget, useUpdateBudget, useDeleteBudget, useCategories } from '@/lib/hooks'
 import { Skeleton } from '@/components/ui/Skeleton'

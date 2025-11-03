@@ -3,7 +3,6 @@ import type {
   Budget,
   CreateBudgetDto,
   UpdateBudgetDto,
-  BudgetsResponse,
   BudgetFilters,
   ApiSuccess,
 } from '../api/types'

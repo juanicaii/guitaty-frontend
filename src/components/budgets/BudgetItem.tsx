@@ -17,7 +17,6 @@ export const BudgetItem = ({
   name,
   spent,
   limit,
-  color,
   currency = 'USD',
   index = 0,
   onClick,

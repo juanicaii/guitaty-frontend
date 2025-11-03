@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { queryKeys } from '@/lib/api/queryKeys'
 import { budgetsService } from '@/lib/services/budgets.service'
-import type { BudgetFilters, Budget } from '@/lib/api/types'
+import type { BudgetFilters } from '@/lib/api/types'
 
 /**
  * Get all budgets with optional filters

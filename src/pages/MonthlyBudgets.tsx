@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 import 'dayjs/locale/es'
 import { BudgetItem } from '../components/budgets/BudgetItem'
 import { MonthPicker } from '../components/budgets/MonthPicker'
@@ -45,6 +45,7 @@ const MonthlyBudgets = () => {
 
     return transactionsData.data.reduce((acc, transaction) => {
       const categoryId = transaction.categoryId
+      if (!categoryId) return acc
       const amount = parseFloat(transaction.amount)
       acc[categoryId] = (acc[categoryId] || 0) + amount
       return acc
@@ -80,9 +81,6 @@ const MonthlyBudgets = () => {
   const isLoading = isLoadingBudgets || isLoadingTransactions
 
   const formatAmount = (amount: number) => {
-    if (budgetSummary.currency === 'ARS') {
-      return `$${amount.toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-    }
     return `$${amount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`
   }
 

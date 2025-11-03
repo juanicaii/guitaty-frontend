@@ -31,7 +31,7 @@ export default function TransactionForm() {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
   // Fetch data
-  const { data: transaction, isLoading: isLoadingTransaction } = useTransaction(id || '', { enabled: isEditing })
+  const { data: transaction, isLoading: isLoadingTransaction } = useTransaction(id || '', isEditing)
   const { data: accounts = [] } = useAccounts()
   const { data: categories = [] } = useCategories()
 
@@ -110,7 +110,6 @@ export default function TransactionForm() {
   }
 
   const selectedCategory = categories.find(c => c.id === categoryId)
-  const selectedAccount = accounts.find(a => a.id === accountId)
 
   if (isEditing && isLoadingTransaction) {
     return (

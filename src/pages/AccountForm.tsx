@@ -32,9 +32,7 @@ const AccountForm = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
 
   // Fetch account if editing
-  const { data: account, isLoading: isLoadingAccount } = useAccount(id || '', {
-    enabled: isEditing,
-  })
+  const { data: account, isLoading: isLoadingAccount } = useAccount(id || '', isEditing)
 
   // Mutations
   const createMutation = useCreateAccount()
@@ -163,7 +161,7 @@ const AccountForm = () => {
               </p>
               <select
                 value={accountType}
-                onChange={(e) => setAccountType(e.target.value)}
+                onChange={(e) => setAccountType(e.target.value as AccountType)}
                 className="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-gray-900 dark:text-gray-100 focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark focus:border-primary h-14 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-4 text-base font-normal leading-normal"
               >
                 <option value="" disabled>
