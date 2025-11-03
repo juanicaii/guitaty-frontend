@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ajustes de Cuenta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#EA2831", accent: "#98FF98", "background-light": "#f8f6f6", "background-dark": "#211111", "text-light-primary": "#212529", "text-light-secondary": "#6C757D", "text-dark-primary": "#F8F9FA", "text-dark-secondary": "#9EADCB", "border-light": "#E9ECEF", "border-dark": "#1E293B", "surface-light": "#FFFFFF", "surface-dark": "#161E2C"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style type="text/css">
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<div class="flex size-10 shrink-0 items-center justify-center text-text-light-primary dark:text-text-dark-primary">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight text-text-light-primary dark:text-text-dark-primary flex-1 text-center">Ajustes</h1>
+<div class="size-10 shrink-0"></div>
+</div>
+<div class="flex flex-col p-4 space-y-8">
+<!-- Profile Header -->
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-16 w-16" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDzboYQzT6xr8pXDVZEztFc-DgtJASh8mPNwBgwT5rpr-RI8uQdewpDRcKP0S7je-nVjjJ2W0rHJV-0xuseomKwjHD2UojibNm8dD67TJN0UwLbvE4pP10CLYcLSxXzWDfzj8D0rOpauy1-EB_NSrCC7iCviUVZQ1c9XsgXtAqhFRkjjgcj3hwf6Kg6pKtZp2OhPjcgTiBGlgLqm2zpZiLw0XexJBq6IHwLgOq2TGhZ5YtEvzrSXBqrQR-_LXTBfUBD4bCstl6yEjqC");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light-primary dark:text-text-dark-primary text-lg font-bold leading-tight">Alex Rivera</p>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-normal leading-normal">alex.rivera@email.com</p>
+<a class="text-primary dark:text-accent/80 text-sm font-medium leading-normal mt-1" href="#">Editar Perfil</a>
+</div>
+</div>
+</div>
+<!-- Sections Container -->
+<div class="flex flex-col space-y-6">
+<!-- Cuenta Section -->
+<div>
+<h2 class="text-sm font-bold leading-tight tracking-widest text-text-light-secondary dark:text-text-dark-secondary px-4 pb-2 uppercase">Cuenta</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark">
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Gestionar suscripción</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">lock</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Cambiar contraseña</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Moneda principal</p>
+</div>
+<div class="flex items-center gap-2 shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="font-medium">USD</span>
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Preferencias Section -->
+<div>
+<h2 class="text-sm font-bold leading-tight tracking-widest text-text-light-secondary dark:text-text-dark-secondary px-4 pb-2 uppercase">Preferencias</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark">
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Notificaciones</p>
+</div>
+<div class="shrink-0">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary dark:peer-checked:bg-accent"></div>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">dark_mode</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Modo oscuro</p>
+</div>
+<div class="shrink-0">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary dark:peer-checked:bg-accent"></div>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Límite de gasto mensual</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Soporte y Legal Section -->
+<div>
+<h2 class="text-sm font-bold leading-tight tracking-widest text-text-light-secondary dark:text-text-dark-secondary px-4 pb-2 uppercase">Soporte y Legal</h2>
+<div class="flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden border border-border-light dark:border-border-dark divide-y divide-border-light dark:divide-border-dark">
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">help</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Centro de ayuda</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Términos y Condiciones</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 p-4 min-h-14 justify-between hover:bg-black/5 dark:hover:bg-white/5 transition-colors cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary dark:text-accent flex items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/10 shrink-0 size-10">
+<span class="material-symbols-outlined">privacy_tip</span>
+</div>
+<p class="text-text-light-primary dark:text-text-dark-primary text-base font-normal leading-normal flex-1 truncate">Política de Privacidad</p>
+</div>
+<div class="shrink-0 text-text-light-secondary dark:text-text-dark-secondary">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="pt-4">
+<button class="w-full h-12 flex items-center justify-center bg-red-500/10 dark:bg-red-500/20 text-red-500 font-bold rounded-xl hover:bg-red-500/20 dark:hover:bg-red-500/30 transition-colors">Cerrar Sesión</button>
+</div>
+<!-- App Version -->
+<div class="text-center text-text-light-secondary dark:text-text-dark-secondary text-xs pt-4 pb-8">
+            Versión de la aplicación 1.2.3
+        </div>
+</div>
+</div>
+</div>
+</body></html>

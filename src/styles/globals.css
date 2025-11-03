@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* iOS Variables */
+  --ios-blue: #007AFF;
+  --ios-gray: #8E8E93;
+  --ios-light-gray: #F2F2F7;
+  --ios-separator: #C6C6C8;
+
+  /* Safe Areas */
+  --safe-area-inset-top: env(safe-area-inset-top);
+  --safe-area-inset-bottom: env(safe-area-inset-bottom);
+  --safe-area-inset-left: env(safe-area-inset-left);
+  --safe-area-inset-right: env(safe-area-inset-right);
+
+  /* Spring Physics */
+  --spring-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --spring-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-background-dark text-gray-900 dark:text-gray-100 font-display;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: pan-x pan-y;
+    overscroll-behavior: none;
+  }
+
+  /* Disable text selection on interactive elements */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+
+  /* Remove 300ms click delay on mobile */
+  a, button, input, select, textarea {
+    touch-action: manipulation;
+  }
+
+  /* Native scroll feel */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide scrollbar globally but keep functionality */
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar but keep functionality (utility class) */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Safe area utilities */
+  .safe-top {
+    padding-top: var(--safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: var(--safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: var(--safe-area-inset-right);
+  }
+
+  /* iOS-like bounce effect */
+  .ios-bounce {
+    overscroll-behavior-y: contain;
+  }
+}
+
+@layer components {
+  /* Native button press effect */
+  .btn-press {
+    @apply active:scale-95 transition-transform duration-100;
+  }
+
+  /* Card with native shadow */
+  .card-native {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-sm;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  /* iOS-style list item */
+  .list-item-ios {
+    @apply bg-white dark:bg-gray-800 active:bg-gray-50 dark:active:bg-gray-700
+           border-b border-gray-200 dark:border-gray-800
+           transition-colors duration-150;
+  }
+
+  /* Backdrop blur like native */
+  .backdrop-native {
+    @apply backdrop-blur-lg bg-white/80 dark:bg-background-dark/90;
+  }
+
+  /* Spring animation */
+  .spring {
+    transition: all 0.5s var(--spring-bounce);
+  }
+}
+
+@layer utilities {
+  /* Text utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Performance optimization */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Native feel utilities */
+  .no-tap-highlight {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Smooth scroll */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}

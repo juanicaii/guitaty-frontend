@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuevo Presupuesto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#EA2831", "background-light": "#f8f6f6", "background-dark": "#211111"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200" style="font-size: 28px;">close</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Nuevo Presupuesto</h2>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<main class="flex-grow flex flex-col px-4 pt-6 pb-28">
+<!-- Form Fields -->
+<div class="space-y-6">
+<!-- Category Selector -->
+<label class="flex flex-col w-full">
+<p class="text-gray-900 dark:text-gray-200 text-base font-medium leading-normal pb-2">Categoría</p>
+<div class="relative">
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 p-4 text-base font-normal leading-normal appearance-none">
+<option disabled="" selected="" value="">Selecciona una categoría</option>
+<option value="comida">Comida</option>
+<option value="transporte">Transporte</option>
+<option value="entretenimiento">Entretenimiento</option>
+<option value="hogar">Hogar</option>
+<option value="salud">Salud</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400">expand_more</span>
+</div>
+</label>
+<!-- Amount Input -->
+<label class="flex flex-col w-full">
+<p class="text-gray-900 dark:text-gray-200 text-base font-medium leading-normal pb-2">Monto del Presupuesto</p>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 text-base">€</span>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 h-14 placeholder:text-gray-500 dark:placeholder:text-gray-400 pl-8 pr-4 py-4 text-base font-normal leading-normal" inputmode="decimal" placeholder="0.00" type="number" value=""/>
+</div>
+</label>
+<!-- Periodicity Selector -->
+<div>
+<p class="text-gray-900 dark:text-gray-200 text-base font-medium leading-normal pb-2">Periodicidad</p>
+<div class="flex">
+<div class="flex h-12 flex-1 items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Semanal</span>
+<input class="invisible w-0" name="periodicity" type="radio" value="Semanal"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 has-[:checked]:dark:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Mensual</span>
+<input checked="" class="invisible w-0" name="periodicity" type="radio" value="Mensual"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Action Buttons -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-3">
+<button class="flex items-center justify-center h-12 w-full rounded-xl bg-primary text-white text-base font-semibold transition-colors hover:bg-primary/90 active:bg-primary/80 disabled:bg-primary/40 disabled:cursor-not-allowed">Guardar Presupuesto</button>
+<button class="flex items-center justify-center h-12 w-full rounded-xl bg-transparent text-primary text-base font-semibold transition-colors hover:bg-primary/10 active:bg-primary/20">Cancelar</button>
+</div>
+</div>
+</div>
+</body></html>

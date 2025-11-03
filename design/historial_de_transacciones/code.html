@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tus Gastos</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#EA2831", "background-light": "#f8f6f6", "background-dark": "#211111"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between border-b border-white/5 bg-background-light/80 px-4 backdrop-blur-sm dark:bg-background-dark/80">
+<div class="flex h-12 w-12 items-center justify-start">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-stone-800 dark:text-stone-200">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold text-stone-900 dark:text-white">Tus Gastos</h1>
+<div class="flex h-12 w-12 items-center justify-end">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 px-4 py-6">
+<!-- Date Section: Hoy -->
+<div class="mb-4">
+<h2 class="mb-3 text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">Hoy</h2>
+<div class="space-y-3">
+<!-- Expense Card 1 -->
+<div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/50 dark:bg-stone-900/50 dark:ring-white/10">
+<div class="flex min-h-[72px] items-center gap-4 p-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">coffee</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-stone-800 dark:text-white">Café en Starbucks</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Comida</p>
+</div>
+<p class="shrink-0 text-lg font-semibold text-stone-900 dark:text-white">-$5.50</p>
+</div>
+</div>
+<!-- Expense Card 2 -->
+<div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/50 dark:bg-stone-900/50 dark:ring-white/10">
+<div class="flex min-h-[72px] items-center gap-4 p-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">train</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-stone-800 dark:text-white">Ticket de Metro</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Transporte</p>
+</div>
+<p class="shrink-0 text-lg font-semibold text-stone-900 dark:text-white">-$2.75</p>
+</div>
+</div>
+<!-- Expense Card 3 -->
+<div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/50 dark:bg-stone-900/50 dark:ring-white/10">
+<div class="flex min-h-[72px] items-center gap-4 p-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">shopping_cart</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-stone-800 dark:text-white">Compra en supermercado</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Supermercado</p>
+</div>
+<p class="shrink-0 text-lg font-semibold text-stone-900 dark:text-white">-$42.15</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Section: Ayer -->
+<div class="mb-4">
+<h2 class="mb-3 text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">Ayer</h2>
+<div class="space-y-3">
+<!-- Expense Card 4 -->
+<div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/50 dark:bg-stone-900/50 dark:ring-white/10">
+<div class="flex min-h-[72px] items-center gap-4 p-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-stone-800 dark:text-white">Cena con amigos</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Ocio</p>
+</div>
+<p class="shrink-0 text-lg font-semibold text-stone-900 dark:text-white">-$28.00</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Date Section: 15 de Octubre -->
+<div class="mb-4">
+<h2 class="mb-3 text-sm font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400">15 de Octubre</h2>
+<div class="space-y-3">
+<!-- Expense Card 5 -->
+<div class="overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-stone-200/50 dark:bg-stone-900/50 dark:ring-white/10">
+<div class="flex min-h-[72px] items-center gap-4 p-3">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-primary/20">
+<span class="material-symbols-outlined text-2xl">movie</span>
+</div>
+<div class="flex-1">
+<p class="font-medium text-stone-800 dark:text-white">Entradas de cine</p>
+<p class="text-sm text-stone-500 dark:text-stone-400">Entretenimiento</p>
+</div>
+<p class="shrink-0 text-lg font-semibold text-stone-900 dark:text-white">-$15.50</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

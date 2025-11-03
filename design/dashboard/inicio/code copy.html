@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Panel de Gastos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#EA2831",
+            "background-light": "#f8f6f6",
+            "background-dark": "#211111",
+            "brand-accent": "#003F5C",
+            "brand-accent-dark": "#006ba1"
+          },
+          fontFamily: {
+            display: "Inter"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="flex w-12 items-center justify-start">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-gray-800 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">person</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<h2 class="text-gray-800 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Octubre 2023</h2>
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400">expand_more</span>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-gray-800 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+</div>
+<div class="px-4 text-center mt-6">
+<p class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal pb-1 pt-1">Balance del Mes</p>
+<h1 class="text-gray-900 dark:text-white tracking-tight text-4xl font-bold leading-tight">$1,520.50</h1>
+</div>
+<div class="relative flex justify-center items-center py-8 my-6">
+<svg class="transform -rotate-90" height="240" viewBox="0 0 120 120" width="240">
+<circle class="stroke-gray-200 dark:stroke-gray-700/50" cx="60" cy="60" fill="none" r="54" stroke-width="12"></circle>
+<circle class="stroke-brand-accent dark:stroke-brand-accent-dark" cx="60" cy="60" fill="none" r="54" stroke-dasharray="213.52" stroke-dashoffset="106.76" stroke-width="12"></circle>
+<circle class="stroke-[#50D890] dark:stroke-[#6affb2]" cx="60" cy="60" fill="none" r="54" stroke-dasharray="213.52" stroke-dashoffset="42.7" stroke-width="12" transform="rotate(180 60 60)"></circle>
+<circle class="stroke-primary" cx="60" cy="60" fill="none" r="54" stroke-dasharray="213.52" stroke-dashoffset="0" stroke-width="12" transform="rotate(-108 60 60)"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<p class="text-gray-600 dark:text-gray-400 text-sm font-medium">Gastado</p>
+<p class="text-gray-900 dark:text-white text-2xl font-bold">$479.50</p>
+</div>
+</div>
+<div class="px-4 pb-2 flex justify-between items-center">
+<h3 class="text-lg font-bold text-gray-900 dark:text-white">Categorías de Gastos</h3>
+<a class="text-sm font-medium text-brand-accent dark:text-brand-accent-dark hover:underline" href="#">Ver todos</a>
+</div>
+<div class="flex flex-col gap-2 px-4 pb-24">
+<div class="flex items-center gap-4 bg-transparent p-3 rounded-lg">
+<div class="text-brand-accent dark:text-brand-accent-dark flex items-center justify-center rounded-lg bg-gray-200/50 dark:bg-gray-800 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">restaurant</span>
+</div>
+<div class="flex-1">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Comida</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">$239.75</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-900 dark:text-white text-base font-bold">50%</p>
+<div class="w-20 mt-1 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-1.5 rounded-full bg-brand-accent dark:bg-brand-accent-dark" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-transparent p-3 rounded-lg">
+<div class="text-primary flex items-center justify-center rounded-lg bg-gray-200/50 dark:bg-gray-800 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">directions_bus</span>
+</div>
+<div class="flex-1">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Transporte</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">$143.85</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-900 dark:text-white text-base font-bold">30%</p>
+<div class="w-20 mt-1 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-1.5 rounded-full bg-primary" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-transparent p-3 rounded-lg">
+<div class="text-[#50D890] dark:text-[#6affb2] flex items-center justify-center rounded-lg bg-gray-200/50 dark:bg-gray-800 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">home</span>
+</div>
+<div class="flex-1">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Hogar</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">$95.90</p>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<p class="text-gray-900 dark:text-white text-base font-bold">20%</p>
+<div class="w-20 mt-1 h-1.5 rounded-full bg-gray-200 dark:bg-gray-700">
+<div class="h-1.5 rounded-full bg-[#50D890] dark:bg-[#6affb2]" style="width: 20%;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 left-0 right-0 h-24 bg-background-light dark:bg-gray-900/90 backdrop-blur-sm border-t border-gray-200 dark:border-gray-800 z-50">
+<nav class="flex h-full items-center justify-around">
+<a class="flex flex-col items-center justify-center gap-1 w-full text-brand-accent dark:text-brand-accent-dark" href="#">
+<span class="material-symbols-outlined filled">home</span>
+<span class="text-xs font-bold">Inicio</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 w-full text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-xs font-medium">Registro</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 w-full text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="text-xs font-medium">Categorías</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 w-full text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs font-medium">Historial</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 w-full text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">manage_accounts</span>
+<span class="text-xs font-medium">Ajustes</span>
+</a>
+</nav>
+</div>
+<div class="fixed bottom-20 right-6 z-40">
+<button class="flex items-center justify-center size-14 rounded-full bg-brand-accent dark:bg-brand-accent-dark text-white shadow-lg">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+
+</body></html>

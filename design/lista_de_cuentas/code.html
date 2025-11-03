@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mis Cuentas</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#ea2a33",
+              "background-light": "#f8f6f6",
+              "background-dark": "#211111",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex h-16 items-center border-b border-zinc-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4">
+<button class="flex h-12 w-12 items-center justify-center text-zinc-800 dark:text-zinc-200">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold text-zinc-900 dark:text-zinc-100">Mis Cuentas</h1>
+<button class="flex h-12 w-12 items-center justify-center text-zinc-800 dark:text-zinc-200">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</header>
+<main class="flex-grow px-4 pt-6 pb-24">
+<!-- Total Balance Card -->
+<div class="mb-8 rounded-xl bg-zinc-900 dark:bg-zinc-800 p-6 text-white shadow-lg">
+<p class="text-sm font-medium text-zinc-400">Balance Total</p>
+<p class="mt-1 text-4xl font-bold tracking-tight">$19,971.35</p>
+</div>
+<!-- Accounts List -->
+<div class="space-y-3">
+<!-- List Item 1 -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 shadow-sm min-h-[72px]">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-zinc-900 dark:text-zinc-100">$12,300.75</p>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">Ahorros para Viaje - Ahorros</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500">chevron_right</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 shadow-sm min-h-[72px]">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-zinc-900 dark:text-zinc-100">$5,800.00</p>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">Portafolio - Inversión</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500">chevron_right</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 shadow-sm min-h-[72px]">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">savings</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-zinc-900 dark:text-zinc-100">$1,520.50</p>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">Banco Principal - Cuenta Corriente</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500">chevron_right</span>
+</div>
+</div>
+<!-- List Item 4 with Swipe Actions -->
+<div class="relative overflow-hidden rounded-xl bg-red-500 text-white">
+<div class="absolute inset-y-0 right-0 flex items-center pr-6">
+<span class="material-symbols-outlined">delete</span>
+<span class="ml-2 font-semibold">Eliminar</span>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 shadow-sm min-h-[72px] transform transition-transform duration-300 ease-in-out -translate-x-32">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">credit_card</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-zinc-900 dark:text-zinc-100">$350.10</p>
+<p class="text-sm text-zinc-500 dark:text-zinc-400">Tarjeta de Crédito Oro - Crédito</p>
+</div>
+<div class="shrink-0">
+<span class="material-symbols-outlined text-zinc-400 dark:text-zinc-500">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-6 right-6">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

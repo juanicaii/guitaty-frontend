@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html class="light dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nueva Categoría</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#EA2831", accent: "#A0E7E5", "background-light": "#f8f6f6", "background-dark": "#211111", "text-primary": "#212529", "text-secondary": "#6C757D"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-2xl">close</span>
+</div>
+<h1 class="text-text-primary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Nueva Categoría</h1>
+<div class="flex w-12 items-center justify-end"></div>
+</div>
+<main class="flex-grow">
+<!-- TextField -->
+<div class="flex max-w-full flex-wrap items-end gap-4 px-4 py-3 pt-6">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-primary dark:text-slate-300 text-base font-medium leading-normal pb-2">Nombre de la categoría</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-primary dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 h-14 placeholder:text-text-secondary p-[15px] text-base font-normal leading-normal" placeholder="Ej. Transporte, Comida, Ocio" value=""/>
+</label>
+</div>
+<!-- SectionHeader -->
+<h2 class="text-text-primary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-6">Elige un icono</h2>
+<!-- Icon Grid (modified TextGrid) -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(80px,1fr))] gap-3 p-4">
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">restaurant</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Comida</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border-2 border-primary bg-primary/10 dark:bg-primary/20 p-4 items-center justify-center aspect-square cursor-pointer transition-all">
+<span class="material-symbols-outlined text-primary dark:text-accent text-3xl">directions_car</span>
+<h3 class="text-primary dark:text-accent text-sm font-bold text-center">Transporte</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">shopping_cart</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Compras</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">home</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Hogar</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">theaters</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Ocio</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">health_and_safety</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Salud</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">school</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Educación</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">sports_soccer</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Deportes</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">flight</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Viajes</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">pets</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Mascotas</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">card_giftcard</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Regalos</h3>
+</div>
+<div class="flex flex-col flex-1 gap-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900/50 p-4 items-center justify-center aspect-square cursor-pointer transition-all hover:border-primary/50 dark:hover:border-primary/50">
+<span class="material-symbols-outlined text-text-primary dark:text-white text-3xl">more_horiz</span>
+<h3 class="text-text-secondary dark:text-slate-400 text-sm font-medium text-center">Otros</h3>
+</div>
+</div>
+</main>
+<!-- ButtonGroup -->
+<div class="sticky bottom-0 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm pt-4 pb-6 px-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex w-full flex-col sm:flex-row-reverse gap-3">
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus:ring-4 focus:ring-primary/30">
+<span class="truncate">Guardar Categoría</span>
+</button>
+<button class="flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-5 bg-slate-200 dark:bg-slate-700 text-text-primary dark:text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-600">
+<span class="truncate">Cancelar</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
