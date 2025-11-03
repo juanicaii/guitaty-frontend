@@ -1,7 +1,6 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft } from 'lucide-react'
 import { CategoryListItem } from '@/components/categories'
 import { FAB } from '@/components/ui/FAB'
 import { Skeleton } from '@/components/ui/Skeleton'
@@ -31,14 +30,9 @@ export default function CategoriesList() {
 
   if (isLoading) {
     return (
-      <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
-        <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 px-4 backdrop-blur-sm dark:bg-background-dark/80">
-          <button
-            onClick={() => navigate(-1)}
-            className="flex size-10 items-center justify-center text-gray-900 dark:text-white"
-          >
-            <ArrowLeft className="size-6" />
-          </button>
+      <div className="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <header className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-4 pb-2 pt-safe">
+          <div className="size-10"></div>
           <h1 className="text-lg font-bold text-gray-900 dark:text-white">
             Categorías
           </h1>
@@ -55,15 +49,10 @@ export default function CategoriesList() {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+    <div className="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 px-4 backdrop-blur-sm dark:bg-background-dark/80">
-        <button
-          onClick={() => navigate(-1)}
-          className="flex size-10 items-center justify-center text-gray-900 dark:text-white"
-        >
-          <ArrowLeft className="size-6" />
-        </button>
+      <header className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-4 pb-2 pt-safe">
+        <div className="size-10"></div>
         <h1 className="text-lg font-bold text-gray-900 dark:text-white">
           Categorías
         </h1>

@@ -1,6 +1,5 @@
 import { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowLeft } from 'lucide-react'
 import dayjs from 'dayjs'
 import 'dayjs/locale/es'
 import { BudgetItem } from '../components/budgets/BudgetItem'
@@ -90,13 +89,9 @@ const MonthlyBudgets = () => {
 
   if (isLoading) {
     return (
-      <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
-        <header className="flex items-center h-16 px-4 justify-between sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200/50 dark:border-white/10">
-          <div className="flex size-10 shrink-0 items-center">
-            <button onClick={() => navigate(-1)} className="text-gray-900 dark:text-white">
-              <ArrowLeft className="size-6" />
-            </button>
-          </div>
+      <div className="flex flex-col bg-background-light dark:bg-background-dark">
+        <header className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 pt-safe">
+          <div className="size-10"></div>
           <h1 className="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
             Presupuestos Mensuales
           </h1>
@@ -115,14 +110,10 @@ const MonthlyBudgets = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
+    <div className="flex flex-col bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <header className="flex items-center h-16 px-4 justify-between sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200/50 dark:border-white/10">
-        <div className="flex size-10 shrink-0 items-center">
-          <button onClick={() => navigate(-1)} className="text-gray-900 dark:text-white">
-            <ArrowLeft className="size-6" />
-          </button>
-        </div>
+      <header className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 pt-safe">
+        <div className="size-10"></div>
         <h1 className="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
           Presupuestos Mensuales
         </h1>

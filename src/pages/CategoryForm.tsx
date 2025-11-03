@@ -104,8 +104,8 @@ const CategoryForm = () => {
 
   if (isEditing && isLoadingCategory) {
     return (
-      <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
-        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+      <div className="relative flex w-full flex-col flex-1 bg-background-light dark:bg-background-dark">
+        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 pt-safe">
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-32" />
           <div className="w-12" />
@@ -124,9 +124,9 @@ const CategoryForm = () => {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+    <div className="relative flex w-full flex-col flex-1 bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 pt-safe">
         <div className="flex size-12 shrink-0 items-center justify-start">
           <button onClick={handleCancel} className="text-text-primary dark:text-white">
             <X className="size-6" />
@@ -234,7 +234,7 @@ const CategoryForm = () => {
       </main>
 
       {/* Save Button */}
-      <div className="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800">
+      <div className="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800 pb-safe">
         <button
           onClick={handleSave}
           disabled={!categoryName.trim() || createMutation.isPending || updateMutation.isPending}

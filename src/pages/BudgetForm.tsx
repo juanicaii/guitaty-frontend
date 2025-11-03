@@ -96,8 +96,8 @@ export default function BudgetForm() {
 
   if (isEditing && isLoadingBudget) {
     return (
-      <div className="relative flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
-        <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+      <div className="relative flex flex-col flex-1 bg-background-light dark:bg-background-dark">
+        <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 pt-safe">
           <Skeleton className="h-12 w-12" />
           <Skeleton className="h-6 w-32" />
           <Skeleton className="h-6 w-20" />
@@ -113,9 +113,9 @@ export default function BudgetForm() {
   }
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
+    <div className="relative flex flex-col flex-1 bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
+      <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 pt-safe">
         <button
           onClick={() => navigate(-1)}
           className="flex size-12 shrink-0 items-center justify-center text-slate-800 dark:text-white"
@@ -143,12 +143,14 @@ export default function BudgetForm() {
         </div>
       </div>
 
-      {/* Amount Display */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="flex flex-col items-center justify-center flex-grow"
-      >
+      {/* Main Content */}
+      <main className="flex-grow overflow-y-auto pb-32">
+        {/* Amount Display */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="flex flex-col items-center justify-center"
+        >
         <div className="flex items-center justify-center px-4 pb-3 pt-6">
           <span className="text-slate-800 dark:text-white tracking-tight text-[56px] font-bold leading-tight">
             $
@@ -215,15 +217,15 @@ export default function BudgetForm() {
             </div>
           </button>
         </div>
-      </motion.div>
+        </motion.div>
+      </main>
 
       {/* Save Button */}
-      <div className="flex px-4 py-3 sticky bottom-0 bg-background-light dark:bg-background-dark w-full">
-        <motion.button
-          whileTap={{ scale: 0.98 }}
+      <div className="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800 pb-safe">
+        <button
           onClick={handleSave}
           disabled={!amount || parseFloat(amount) === 0 || !categoryId || createMutation.isPending || updateMutation.isPending}
-          className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 flex-1 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="truncate">
             {createMutation.isPending || updateMutation.isPending
@@ -232,7 +234,7 @@ export default function BudgetForm() {
                 ? 'Actualizar'
                 : 'Guardar'}
           </span>
-        </motion.button>
+        </button>
       </div>
 
       {/* Category Picker */}

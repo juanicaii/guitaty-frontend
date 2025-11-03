@@ -96,8 +96,8 @@ const AccountForm = () => {
 
   if (isEditing && isLoadingAccount) {
     return (
-      <div className="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
-        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+      <div className="relative flex h-auto w-full flex-col flex-1 bg-background-light dark:bg-background-dark">
+        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 pt-safe">
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-40" />
           <div className="w-12" />
@@ -112,10 +112,10 @@ const AccountForm = () => {
   }
 
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+    <div className="relative flex h-auto w-full flex-col flex-1 bg-background-light dark:bg-background-dark">
       <main className="flex h-full flex-grow flex-col">
         {/* Header */}
-        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
+        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800 pt-safe">
           <button
             onClick={handleClose}
             className="text-gray-800 dark:text-gray-200 flex size-12 shrink-0 items-center justify-center"
@@ -216,7 +216,7 @@ const AccountForm = () => {
         </div>
 
         {/* Save Button */}
-        <div className="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800">
+        <div className="sticky bottom-0 bg-background-light dark:bg-background-dark p-4 border-t border-gray-200 dark:border-gray-800 pb-safe">
           <button
             onClick={handleSave}
             disabled={!canSave || createMutation.isPending || updateMutation.isPending}

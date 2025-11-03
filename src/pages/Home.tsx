@@ -80,8 +80,8 @@ export default function Home() {
 
   if (!isLoaded || isLoadingStats) {
     return (
-      <div className="min-h-screen bg-background-light dark:bg-background-dark">
-        <div className="p-4">
+      <div className="flex flex-col bg-background-light dark:bg-background-dark">
+        <div className="p-4 pt-safe">
           <Skeleton className="h-10 w-full mb-4" />
           <Skeleton className="h-32 w-full mb-6" />
           <Skeleton className="h-64 w-64 mx-auto mb-6 rounded-full" />
@@ -94,12 +94,12 @@ export default function Home() {
   }
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
+    <div className="relative flex flex-col bg-background-light dark:bg-background-dark">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between"
+        className="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 pt-safe justify-between"
       >
         {/* Left: Profile Button */}
         <div className="flex w-12 items-center justify-start">

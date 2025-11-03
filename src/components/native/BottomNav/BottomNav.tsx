@@ -15,7 +15,7 @@ export const BottomNav = ({ children, className }: BottomNavProps) => {
       className={cn(
         'fixed bottom-0 left-0 right-0 z-50',
         'backdrop-native border-t border-gray-200 dark:border-gray-800',
-        'pb-safe-bottom',
+        'pb-safe',
         className
       )}
     >

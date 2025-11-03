@@ -12,7 +12,7 @@ export default function Profile() {
 
   if (!isLoaded) {
     return (
-      <div className="min-h-screen">
+      <div className="flex flex-col">
         <AppHeader title="Perfil" onBackPress={() => navigate('/')} />
         <main className="p-6 space-y-6">
           <div className="card-native p-6 text-center space-y-4">
@@ -28,7 +28,7 @@ export default function Profile() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col">
       <AppHeader title="Perfil" onBackPress={() => navigate('/')} />
 
       <main className="p-6 space-y-6 pb-24">

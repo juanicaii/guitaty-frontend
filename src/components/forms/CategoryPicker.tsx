@@ -67,7 +67,7 @@ export const CategoryPicker = ({
               </div>
 
               {/* Categories Grid */}
-              <div className="p-4 overflow-y-auto flex-1">
+              <div className="p-4 overflow-y-auto flex-1 pb-safe">
                 {isLoading ? (
                   <div className="grid grid-cols-2 gap-3">
                     {[1, 2, 3, 4, 5, 6].map((i) => (

@@ -72,8 +72,8 @@ export default function AccountsList() {
 
   if (isLoading) {
     return (
-      <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
-        <header className="sticky top-0 z-10 flex h-16 items-center border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4">
+      <div className="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
+        <header className="sticky top-0 z-10 flex items-center border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-4 pb-2 pt-safe">
           <div className="flex h-12 w-12"></div>
           <h1 className="flex-1 text-center text-lg font-bold text-gray-900 dark:text-white">
             Mis Cuentas
@@ -91,9 +91,9 @@ export default function AccountsList() {
   }
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+    <div className="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <header className="sticky top-0 z-10 flex h-16 items-center border-b border-gray-200/50 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4">
+      <header className="sticky top-0 z-10 flex items-center border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark p-4 pb-2 pt-safe">
         <div className="flex h-12 w-12"></div>
         <h1 className="flex-1 text-center text-lg font-bold text-gray-900 dark:text-white">
           Mis Cuentas

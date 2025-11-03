@@ -112,7 +112,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    allowedHosts: ['guitaty.com', 'www.guitaty.com',"efbd01a48cd8.ngrok-free.app"]
+    allowedHosts: ['guitaty.com', 'www.guitaty.com',"e7f5273674e9.ngrok-free.app"]
   },
   build: {
     target: 'esnext',

@@ -82,5 +82,65 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.pt-safe': {
+          paddingTop: 'env(safe-area-inset-top)',
+        },
+        '.pb-safe': {
+          paddingBottom: 'env(safe-area-inset-bottom)',
+        },
+        '.pl-safe': {
+          paddingLeft: 'env(safe-area-inset-left)',
+        },
+        '.pr-safe': {
+          paddingRight: 'env(safe-area-inset-right)',
+        },
+        '.mt-safe': {
+          marginTop: 'env(safe-area-inset-top)',
+        },
+        '.mb-safe': {
+          marginBottom: 'env(safe-area-inset-bottom)',
+        },
+        '.ml-safe': {
+          marginLeft: 'env(safe-area-inset-left)',
+        },
+        '.mr-safe': {
+          marginRight: 'env(safe-area-inset-right)',
+        },
+        '.top-safe': {
+          top: 'env(safe-area-inset-top)',
+        },
+        '.bottom-safe': {
+          bottom: 'env(safe-area-inset-bottom)',
+        },
+        '.left-safe': {
+          left: 'env(safe-area-inset-left)',
+        },
+        '.right-safe': {
+          right: 'env(safe-area-inset-right)',
+        },
+        '.h-screen-safe': {
+          height: 'calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        },
+        '.min-h-screen-safe': {
+          minHeight: 'calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom))',
+        },
+        // Combined safe area utilities for common use cases
+        '.pb-nav-safe': {
+          paddingBottom: 'calc(5rem + env(safe-area-inset-bottom))', // 80px (h-20) + safe area for bottom nav
+        },
+        '.pb-24-safe': {
+          paddingBottom: 'calc(6rem + env(safe-area-inset-bottom))', // 96px (pb-24) + safe area
+        },
+        '.pb-32-safe': {
+          paddingBottom: 'calc(8rem + env(safe-area-inset-bottom))', // 128px (pb-32) + safe area
+        },
+        '.bottom-20-safe': {
+          bottom: 'calc(5rem + env(safe-area-inset-bottom))', // for FAB positioning
+        },
+      })
+    }
+  ],
 }

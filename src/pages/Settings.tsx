@@ -47,9 +47,9 @@ export default function Settings() {
   ]
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
+    <div className="relative flex w-full flex-col bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <div className="flex items-center h-16 px-4 sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200/50 dark:border-white/10">
+      <div className="flex items-center p-4 pb-2 sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800 pt-safe">
         <button
           onClick={() => navigate(-1)}
           className="flex size-10 shrink-0 items-center justify-center text-gray-900 dark:text-white"

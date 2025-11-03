@@ -54,7 +54,7 @@ export const BottomSheet = ({
               <div className="w-10 h-1 bg-gray-300 dark:bg-gray-700 rounded-full" />
             </div>
 
-            <div className="overflow-y-auto max-h-[calc(90vh-2rem)] pb-safe-bottom">
+            <div className="overflow-y-auto max-h-[calc(90vh-2rem)] pb-safe">
               {children}
             </div>
           </motion.div>
