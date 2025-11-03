@@ -47,9 +47,9 @@
     overflow: hidden;
   }
 
-  /* Prevent zoom on inputs in iOS */
+  /* Prevent zoom on inputs in iOS without changing font size */
   input, select, textarea {
-    font-size: 16px !important;
+    font-size: max(16px, 1em);
   }
 
   /* Disable text selection on interactive elements */
