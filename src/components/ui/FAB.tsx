@@ -17,7 +17,7 @@ export const FAB = ({ icon, onClick, className }: FABProps) => {
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       onClick={onClick}
       className={`
-        fixed bottom-20 right-6 z-40
+        fixed bottom-20 right-6 z-[60]
         flex items-center justify-center size-14
         rounded-full
         bg-brand-accent dark:bg-brand-accent-dark
