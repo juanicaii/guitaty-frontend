@@ -6,6 +6,7 @@ import { configureApiAuth } from '@/lib/api/client'
 import { ClerkProvider } from '@/providers/ClerkProvider'
 import { ProtectedRoute } from '@/components/auth'
 import { AppLayout } from '@/components/layout/AppLayout'
+import { FormLayout } from '@/components/layout/FormLayout'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { BottomNav, BottomNavItem } from '@/components/native/BottomNav'
 import { SplashScreen } from '@/components/ui/SplashScreen'
@@ -122,9 +123,11 @@ function AppContent() {
           path="/registro"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <TransactionFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <TransactionFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -132,9 +135,11 @@ function AppContent() {
           path="/registro/:id"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <TransactionFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <TransactionFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -190,9 +195,11 @@ function AppContent() {
           path="/categorias/nueva"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <CategoryFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <CategoryFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -200,9 +207,11 @@ function AppContent() {
           path="/categorias/:id"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <CategoryFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <CategoryFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -210,9 +219,11 @@ function AppContent() {
           path="/cuentas/nueva"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <AccountFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <AccountFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -220,9 +231,11 @@ function AppContent() {
           path="/cuentas/:id"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <AccountFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <AccountFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -230,9 +243,11 @@ function AppContent() {
           path="/presupuestos/nuevo"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <BudgetFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <BudgetFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -240,9 +255,11 @@ function AppContent() {
           path="/presupuestos/:id"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <BudgetFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <BudgetFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -262,9 +279,11 @@ function AppContent() {
           path="/suscripciones/nueva"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <SubscriptionFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <SubscriptionFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
@@ -272,9 +291,11 @@ function AppContent() {
           path="/suscripciones/:id"
           element={
             <ProtectedRoute>
-              <PageTransition>
-                <SubscriptionFormPage />
-              </PageTransition>
+              <FormLayout>
+                <PageTransition>
+                  <SubscriptionFormPage />
+                </PageTransition>
+              </FormLayout>
             </ProtectedRoute>
           }
         />
