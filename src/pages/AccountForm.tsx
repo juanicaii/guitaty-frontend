@@ -97,7 +97,7 @@ const AccountForm = () => {
   if (isEditing && isLoadingAccount) {
     return (
       <div className="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
-        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
           <Skeleton className="h-6 w-6" />
           <Skeleton className="h-6 w-40" />
           <div className="w-12" />
@@ -115,7 +115,7 @@ const AccountForm = () => {
     <div className="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark">
       <main className="flex h-full flex-grow flex-col">
         {/* Header */}
-        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+        <div className="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-slate-200 dark:border-slate-800">
           <button
             onClick={handleClose}
             className="text-gray-800 dark:text-gray-200 flex size-12 shrink-0 items-center justify-center"

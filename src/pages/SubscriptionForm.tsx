@@ -120,7 +120,7 @@ export default function SubscriptionForm() {
   if (isEditing && isLoadingSubscription) {
     return (
       <div className="relative flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
-        <div className="flex items-center p-4 pb-2 justify-between">
+        <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
           <Skeleton className="h-12 w-12" />
           <Skeleton className="h-6 w-32" />
           <Skeleton className="h-6 w-20" />
@@ -138,7 +138,7 @@ export default function SubscriptionForm() {
   return (
     <div className="relative flex flex-col min-h-screen bg-background-light dark:bg-background-dark">
       {/* Header */}
-      <div className="flex items-center p-4 pb-2 justify-between">
+      <div className="flex items-center p-4 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark border-b border-slate-200 dark:border-slate-800">
         <button
           onClick={() => navigate(-1)}
           className="flex size-12 shrink-0 items-center justify-center text-slate-800 dark:text-white"
