@@ -27,7 +27,7 @@ export const AppHeader = ({
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
-        'sticky top-0 z-40 w-full pt-safe-top',
+        'sticky top-0 z-40 w-full pt-safe',
         transparent
           ? 'bg-transparent'
           : 'backdrop-native border-b border-gray-200 dark:border-gray-800',

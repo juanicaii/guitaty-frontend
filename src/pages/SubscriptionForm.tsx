@@ -167,7 +167,7 @@ export default function SubscriptionForm() {
       </div>
 
       {/* Form Content */}
-      <div className="flex-1 overflow-y-auto pb-24">
+      <div className="flex-1 overflow-y-auto pb-24-safe">
         <div className="w-full max-w-md mx-auto px-4 pt-6">
           {/* Name Input */}
           <motion.div

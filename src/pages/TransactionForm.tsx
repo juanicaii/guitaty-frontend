@@ -161,7 +161,7 @@ export default function TransactionForm() {
       </div>
 
       {/* Main Content */}
-      <main className="flex-grow overflow-y-auto pb-32">
+      <main className="flex-grow overflow-y-auto pb-32-safe">
         {/* Amount Display */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

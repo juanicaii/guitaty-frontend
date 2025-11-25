@@ -46,7 +46,7 @@ export default function RecurringPayments() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 px-4 pt-6 pb-24">
+      <main className="flex-1 px-4 pt-6 pb-24-safe">
         {isLoading ? (
           <div className="space-y-4">
             <Skeleton className="h-24 w-full rounded-xl" />

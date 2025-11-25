@@ -4,6 +4,8 @@ import type {
   CreateAccountDto,
   UpdateAccountDto,
   ApiSuccess,
+  AccountBalance,
+  Currency,
 } from '../api/types'
 
 export const accountsService = {
@@ -40,5 +42,12 @@ export const accountsService = {
    */
   delete: async (id: string): Promise<ApiSuccess> => {
     return apiClient.delete<ApiSuccess>(`/accounts/${id}`)
+  },
+
+  /**
+   * Get account balance by currency
+   */
+  getBalance: async (currency: Currency): Promise<AccountBalance> => {
+    return apiClient.get<AccountBalance>(`/accounts/balance?currency=${currency}`)
   },
 }

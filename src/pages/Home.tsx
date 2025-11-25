@@ -9,7 +9,7 @@ import { FAB } from '@/components/ui/FAB'
 import { Skeleton } from '@/components/ui/Skeleton'
 import { CurrencySelector } from '@/components/ui/CurrencySelector'
 import { User, Settings, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useDashboardStats } from '@/lib/hooks'
+import { useDashboardStats, useAccountBalance } from '@/lib/hooks'
 import { getIcon } from '@/lib/utils/iconMapper'
 import { usePaymentDate } from '@/hooks/usePaymentDate'
 import dayjs from 'dayjs'
@@ -33,6 +33,9 @@ export default function Home() {
   // Get dashboard stats from API
   const { data: dashboardData, isLoading: isLoadingStats } = useDashboardStats(currentPeriod)
 
+  // Get account balance by currency
+  const { data: accountBalance, isLoading: isLoadingBalance } = useAccountBalance(selectedCurrency)
+
   // Calculate display month
   const displayMonth = useMemo(() => {
     return dayjs().add(monthOffset, 'month')
@@ -50,7 +53,7 @@ export default function Home() {
   const displayData = useMemo(() => {
     if (!dashboardData) {
       return {
-        balance: 0,
+        balance: accountBalance?.balance ?? 0,
         totalSpent: 0,
         currency: selectedCurrency,
         categories: [],
@@ -60,7 +63,7 @@ export default function Home() {
     const currencyData = selectedCurrency === 'USD' ? dashboardData.usd : dashboardData.ars
 
     return {
-      balance: currencyData.accountBalance,
+      balance: accountBalance?.balance ?? currencyData.accountBalance,
       totalSpent: currencyData.totalExpenses,
       currency: selectedCurrency,
       categories: currencyData.topExpenseCategories
@@ -76,9 +79,9 @@ export default function Home() {
           color: cat.category!.color || '#666666',
         })),
     }
-  }, [dashboardData, selectedCurrency])
+  }, [dashboardData, selectedCurrency, accountBalance])
 
-  if (!isLoaded || isLoadingStats) {
+  if (!isLoaded || isLoadingStats || isLoadingBalance) {
     return (
       <div className="flex flex-col bg-background-light dark:bg-background-dark">
         <div className="p-4 pt-safe">

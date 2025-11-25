@@ -31,7 +31,7 @@ export default function Profile() {
     <div className="flex flex-col">
       <AppHeader title="Perfil" onBackPress={() => navigate('/')} />
 
-      <main className="p-6 space-y-6 pb-24">
+      <main className="p-6 space-y-6 pb-24-safe">
         {/* Profile Card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -147,7 +147,7 @@ const CategoryForm = () => {
         </div>
       </div>
 
-      <main className="flex-grow pb-32">
+      <main className="flex-grow pb-32-safe">
         {/* TextField */}
         <div className="flex max-w-full flex-wrap items-end gap-4 px-4 py-3 pt-6">
           <label className="flex flex-col min-w-40 flex-1">

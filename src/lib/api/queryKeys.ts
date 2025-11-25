@@ -12,6 +12,8 @@ export const queryKeys = {
     list: () => [...queryKeys.accounts.lists()] as const,
     details: () => [...queryKeys.accounts.all, 'detail'] as const,
     detail: (id: string) => [...queryKeys.accounts.details(), id] as const,
+    balances: () => [...queryKeys.accounts.all, 'balance'] as const,
+    balance: (currency: string) => [...queryKeys.accounts.balances(), currency] as const,
   },
 
   // Categories

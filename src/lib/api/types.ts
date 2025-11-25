@@ -269,6 +269,12 @@ export interface DashboardStatsFilters {
   [key: string]: string | undefined
 }
 
+// Account Balance
+export interface AccountBalance {
+  currency: Currency
+  balance: number
+}
+
 // Generic API Response
 export interface ApiError {
   error: string

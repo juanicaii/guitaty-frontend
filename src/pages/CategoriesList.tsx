@@ -38,7 +38,7 @@ export default function CategoriesList() {
           </h1>
           <div className="size-10"></div>
         </header>
-        <main className="flex-1 px-4 pt-6 pb-24">
+        <main className="flex-1 px-4 pt-6 pb-24-safe">
           <Skeleton className="mb-4 h-6 w-24" />
           <Skeleton className="mb-4 h-32 w-full rounded-xl" />
           <Skeleton className="mb-4 h-6 w-24" />

@@ -14,27 +14,16 @@ export default function Settings() {
   const { signOut, openUserProfile } = useClerk()
   const { user } = useUser()
   const [darkMode, setDarkMode] = useState(true)
-  const { paymentDate, setPaymentDate } = usePaymentDate()
-  const [isEditingDate, setIsEditingDate] = useState(false)
-  const [tempDate, setTempDate] = useState(paymentDate.toString())
+  const { getPaymentDayForMonth } = usePaymentDate()
 
   const handleSignOut = async () => {
     await signOut()
     navigate('/sign-in')
   }
 
-  const handleDateChange = () => {
-    const newDate = parseInt(tempDate, 10)
-    if (!isNaN(newDate) && newDate >= 1 && newDate <= 31) {
-      setPaymentDate(newDate)
-      setIsEditingDate(false)
-    }
-  }
-
-  const handleCancelEdit = () => {
-    setTempDate(paymentDate.toString())
-    setIsEditingDate(false)
-  }
+  // Obtener el día de cobro del mes actual para mostrar
+  const today = new Date()
+  const currentPaymentDay = getPaymentDayForMonth(today.getFullYear(), today.getMonth())
 
   const preferenceItems = [
     {
@@ -62,7 +51,7 @@ export default function Settings() {
         <div className="size-10 shrink-0"></div>
       </div>
 
-      <div className="flex flex-col p-4 space-y-8 pb-24">
+      <div className="flex flex-col p-4 space-y-8 pb-24-safe">
         {/* Profile Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -153,42 +142,13 @@ export default function Settings() {
                       Día de cobro
                     </p>
                     <p className="text-text-light-secondary dark:text-text-dark-secondary text-sm leading-normal">
-                      Define el inicio de tu mes financiero
+                      Último día hábil del mes (actualmente día {currentPaymentDay})
                     </p>
                   </div>
                 </div>
-                {isEditingDate ? (
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="number"
-                      min="1"
-                      max="31"
-                      value={tempDate}
-                      onChange={(e) => setTempDate(e.target.value)}
-                      className="w-16 px-2 py-1 text-center bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark rounded-lg text-text-light-primary dark:text-text-dark-primary"
-                      autoFocus
-                    />
-                    <button
-                      onClick={handleDateChange}
-                      className="px-3 py-1 bg-primary text-white rounded-lg text-sm font-medium"
-                    >
-                      ✓
-                    </button>
-                    <button
-                      onClick={handleCancelEdit}
-                      className="px-3 py-1 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg text-sm font-medium"
-                    >
-                      ✕
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => setIsEditingDate(true)}
-                    className="px-4 py-2 bg-primary/10 dark:bg-primary/20 text-primary rounded-lg text-base font-semibold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors"
-                  >
-                    Día {paymentDate}
-                  </button>
-                )}
+                <div className="px-4 py-2 bg-primary/10 dark:bg-primary/20 text-primary rounded-lg text-base font-semibold">
+                  Último día hábil
+                </div>
               </div>
             </div>
           </motion.div>

@@ -97,7 +97,7 @@ const MonthlyBudgets = () => {
           </h1>
           <div className="size-10"></div>
         </header>
-        <main className="flex-1 flex flex-col pb-24 px-4 pt-6">
+        <main className="flex-1 flex flex-col pb-24-safe px-4 pt-6">
           <Skeleton className="mb-4 h-12 w-full rounded-xl" />
           <Skeleton className="mb-4 h-32 w-full rounded-xl" />
           <Skeleton className="mb-4 h-6 w-32" />
@@ -120,7 +120,7 @@ const MonthlyBudgets = () => {
         <div className="size-10"></div>
       </header>
 
-      <main className="flex-1 flex flex-col pb-24">
+      <main className="flex-1 flex flex-col pb-24-safe">
         {/* Month Selector */}
         <div className="flex gap-3 px-4 py-3">
           <MonthPicker

@@ -80,7 +80,7 @@ export default function AccountsList() {
           </h1>
           <div className="flex h-12 w-12"></div>
         </header>
-        <main className="flex-grow px-4 pt-6 pb-24">
+        <main className="flex-grow px-4 pt-6 pb-24-safe">
           <Skeleton className="mb-8 h-28 w-full rounded-xl" />
           <Skeleton className="mb-3 h-20 w-full rounded-xl" />
           <Skeleton className="mb-3 h-20 w-full rounded-xl" />

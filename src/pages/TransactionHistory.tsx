@@ -82,7 +82,7 @@ export default function TransactionHistory() {
             </button>
           </div>
         </div>
-        <main className="flex-1 px-4 pt-6 pb-24">
+        <main className="flex-1 px-4 pt-6 pb-24-safe">
           <Skeleton className="mb-4 h-6 w-24" />
           <Skeleton className="mb-3 h-20 w-full rounded-xl" />
           <Skeleton className="mb-3 h-20 w-full rounded-xl" />
