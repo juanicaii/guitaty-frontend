@@ -93,15 +93,16 @@ export const usePaymentDate = () => {
     const year = adjustedDate.getFullYear()
     const month = adjustedDate.getMonth()
 
-    const startDay = getLastBusinessDay(year, month)
-    const periodStart = new Date(year, month, startDay)
+    // El período comienza en el último día hábil del MES ANTERIOR
+    const prevMonth = month - 1
+    const prevYear = prevMonth < 0 ? year - 1 : year
+    const prevMonthAdjusted = prevMonth < 0 ? 11 : prevMonth
+    const startDay = getLastBusinessDay(prevYear, prevMonthAdjusted)
+    const periodStart = new Date(prevYear, prevMonthAdjusted, startDay)
 
-    // Calcular el mes siguiente
-    const nextMonth = month + 1
-    const nextYear = nextMonth > 11 ? year + 1 : year
-    const nextMonthAdjusted = nextMonth > 11 ? 0 : nextMonth
-    const endDay = getLastBusinessDay(nextYear, nextMonthAdjusted)
-    const periodEnd = new Date(nextYear, nextMonthAdjusted, endDay - 1)
+    // El período termina el día antes del último día hábil del mes objetivo
+    const endDay = getLastBusinessDay(year, month)
+    const periodEnd = new Date(year, month, endDay - 1)
 
     return { startDate: periodStart, endDate: periodEnd }
   }
