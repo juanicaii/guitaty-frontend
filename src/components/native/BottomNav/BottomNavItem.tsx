@@ -33,7 +33,7 @@ export const BottomNavItem = ({
       >
         {icon}
       </motion.div>
-      <span className={cn('text-xs', active ? 'font-bold' : 'font-medium')}>
+      <span className={cn('text-[10px]', active ? 'font-bold' : 'font-medium')}>
         {label}
       </span>
     </motion.button>
