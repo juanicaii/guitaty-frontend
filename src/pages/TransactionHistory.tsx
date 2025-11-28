@@ -24,6 +24,7 @@ export default function TransactionHistory() {
       title: t.description || 'Sin descripción',
       category: t.category?.name || 'Sin categoría',
       amount: t.type === 'EXPENSE' ? -parseFloat(t.amount) : parseFloat(t.amount),
+      currency: t.currency,
       // Parse date ignoring timezone to prevent date shifting
       date: t.date.split('T')[0],
       icon: getIcon(t.category?.icon, 'size-6'),
@@ -165,6 +166,7 @@ export default function TransactionHistory() {
                     title={transaction.title}
                     category={transaction.category}
                     amount={transaction.amount}
+                    currency={transaction.currency}
                     onClick={() => handleTransactionClick(transaction.id)}
                   />
                 ))}
