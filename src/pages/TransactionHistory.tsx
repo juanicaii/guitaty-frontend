@@ -24,7 +24,7 @@ export default function TransactionHistory() {
       title: t.description || 'Sin descripción',
       category: t.category?.name || 'Sin categoría',
       amount: t.type === 'EXPENSE' ? -parseFloat(t.amount) : parseFloat(t.amount),
-      currency: t.currency,
+      currency: t.account.currency, // Use account currency instead of transaction currency
       // Parse date ignoring timezone to prevent date shifting
       date: t.date.split('T')[0],
       icon: getIcon(t.category?.icon, 'size-6'),

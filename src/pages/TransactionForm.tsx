@@ -62,9 +62,19 @@ export default function TransactionForm() {
   }, [transaction])
 
   const handleAmountChange = (value: string) => {
+    // Allow empty string
+    if (value === '') {
+      setAmount('0')
+      return
+    }
+
+    // Replace comma with period for decimal support
+    const normalizedValue = value.replace(',', '.')
+
+    // Allow only numbers and one decimal point with up to 2 decimal places
     const regex = /^\d*\.?\d{0,2}$/
-    if (regex.test(value) || value === '') {
-      setAmount(value)
+    if (regex.test(normalizedValue)) {
+      setAmount(normalizedValue)
     }
   }
 
